@@ -25,4 +25,4 @@ router.get('/', async function(req, res, next) {
   res.render('index', { pictures: pictures, title: 'Express' });
 });
 
-module.exports = router;
+module.exports = router;//dummy
