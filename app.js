@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { auth } = require('express-openid-connect');
 
+const fileUpload = require('express-fileupload');
+
 
 var indexRouter = require('./routes/index');
 var picturesRouter = require('./routes/pictures');
@@ -16,7 +18,6 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-const fileUpload = require('express-fileupload');
 app.use(fileUpload());
 
 app.use(express.static(path.join(__dirname, 'pictures')));
